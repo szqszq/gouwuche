@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			table{
+				width: 800px;
+				background-color: yellow;
+				border-collapse: collapse;
+				margin: 20px auto;
+				text-align: center;
+			}
+			table,tr,th,td{
+				border:solid 1px;
+			}
+			button{
+				width: 20px;
+				height: 20px;
+			}
+		</style>
+		<script src="angular/angular.js"></script>
+	</head>
+	<body ng-controller="myCtrl">
+		<table>
+			<tr>
+				<th>
+					全选
+					<input type="checkbox"  all-check ng-model="allCheck"/>
+				</th>
+				<th>商品名称</th>
+				<th>商品单价</th>
+				<th>商品数量</th>
+				<th>商品小计</th>
+			</tr>
+			<tr ng-repeat="i in arr">
+				<td><input type="checkbox"  one-check ng-model="i.Bol"/></td>
+				<td>{{i.name}}</td>
+				<td>{{i.oneprice}}</td>
+				<td>
+					<button rem-btn rem={{i.id}}>-</button>
+					<span>{{i.num}}</span>
+					<button add-btn add={{i.id}}>+</button>
+				</td>
+				<td>{{i.price}}</td>
+			</tr>
+			<tr>
+				<td colspan="5">{{addprice()}}</td>
+			</tr>
+		</table>
+	</body>
+	<script src="js/index.js"></script>
+	<script src="js/Service.js"></script>
+</html>

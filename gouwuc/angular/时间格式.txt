@@ -1,0 +1,5 @@
+
+
+angular中将毫秒转化为 2018-01-11 19:12:44 格式的过滤器
+
+{{item.id|date:"yyyy-MM-dd HH:mm:ss"}}
